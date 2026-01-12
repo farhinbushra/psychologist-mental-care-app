@@ -1,13 +1,10 @@
+
 {
-  "version": 2,
-  "builds": [
+  "rewrites": [
     {
-      "src": "client/psychologist-app/package.json",
-      "use": "@vercel/static-build",
-      "config": { "distDir": "build" }
+      "source": "/(.*)",
+      "destination": "/"
     }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/client/psychologist-app/build/$1" }
   ]
 }
+
