@@ -1,0 +1,67 @@
+:root{ --nav-height: 68px; --accent: #4a90e2; }
+/* offset page content so fixed navbar doesn't cover it */
+body{ padding-top: var(--nav-height); }
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--nav-height);
+    padding: 12px 28px;
+    background-color: var(--accent);
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    overflow: visible;
+}
+.navbar .nav-brand {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+.navbar .nav-links {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+.navbar .nav-links a:hover {
+    text-decoration: underline;
+}
+/* Highlight CTA link so it's clearly visible */
+.navbar .nav-links a.cta {
+    background: #fff;
+    color: var(--accent);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+.navbar .nav-links a.cta:hover{ transform: translateY(-2px); }
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 14px 18px;
+    }
+    .navbar .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+    .navbar .nav-links a {
+        padding: 10px 0;
+        width: 100%;
+    }
+}
